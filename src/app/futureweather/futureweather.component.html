@@ -1,0 +1,85 @@
+<style>
+.ccc{
+    background-color: red;
+    color: white;
+}
+.eee{
+    background-color: blue;
+    color: white;
+}
+.fff{
+    background-color: green;
+    color: white;
+}
+</style>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-2 sideback" ></div>
+
+
+<div class="col-md-8">
+
+<div>
+
+
+    <div class="card ntp" *ngFor="let first of currentData;let i=index;">
+        <div *ngFor="let second of first.hour" [ngSwitch]="i">
+            <div class="card-body bg-warning text-white" *ngSwitchCase="0">
+                <h4>current: {{second.temp_c}}</h4>
+                <h4>current: {{second.temp_f}}</h4>
+                <h4>Humidity: {{second.humidity}}</h4>
+                <h4>Feels Like: {{second.feelslike_c}}</h4>
+                <h4>Feels Like: {{second.feelslike_f}}</h4>
+                <h4>Chance Of Rain: {{second.chance_of_rain}}</h4>
+                <h4>Time: {{second.time}}</h4>
+                <hr/>
+            </div>
+            <div class="card-body bg-success text-white" *ngSwitchCase="1">
+                <h4>current: {{second.temp_c}}</h4>
+                <h4>current: {{second.temp_f}}</h4>
+                <h4>Humidity: {{second.humidity}}</h4>
+                <h4>Feels Like: {{second.feelslike_c}}</h4>
+                <h4>Feels Like: {{second.feelslike_f}}</h4>
+                <h4>Chance Of Rain: {{second.chance_of_rain}}</h4>
+                <h4>Time: {{second.time}}</h4>
+                <hr/>
+            </div>
+            <div class="card-body bg-danger text-white" *ngSwitchCase="2">
+                <h4>current: {{second.temp_c}}</h4>
+                <h4>current: {{second.temp_f}}</h4>
+                <h4>Humidity: {{second.humidity}}</h4>
+                <h4>Feels Like: {{second.feelslike_c}}</h4>
+                <h4>Feels Like: {{second.feelslike_f}}</h4>
+                <h4>Chance Of Rain: {{second.chance_of_rain}}</h4>
+                <h4>Time: {{second.time}}</h4>
+                <hr/>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</div>
+
+
+<div class="col-md-2 sideback">
+
+
+<div class="chart-wrapper">
+    <canvas baseChart 
+    [data]="doughnutChartData"
+    [labels]="doughnutChartLabels"
+    [colors]="lineChartColors"
+    [chartType]="doughnutChartType">
+  </canvas>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+
